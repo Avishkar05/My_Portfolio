@@ -57,15 +57,15 @@ To run this project locally on your machine, follow these simple steps:
 The project is organized into three main files for simplicity:
 
 ## Project Structure
-
-- index.html          # The main HTML structure
-- style.css           # All styling, including dark mode and responsiveness
-- script.js           # All interactivity and library initializations
-- images/             # Folder for profile and project images
-  - profile-photo.jpg
-  - project-lawify.png
-  - ...
-- README.md           # This file
+/
+├── index.html          # The main HTML structure
+├── style.css           # All styling, including dark mode and responsiveness
+├── script.js           # All interactivity and library initializations
+├── images/             # Folder for profile and project images
+│   ├── profile-photo.jpg
+│   ├── project-lawify.png
+│   └── ...
+└── README.md           # This file
   
 ---
 
