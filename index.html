@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avishkar Zende | Full Stack Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="custom-cursor"></div>
+
+    <header class="navbar">
+        <nav class="navbar-container">
+            <a href="#" class="nav-logo">Avishkar Zende</a>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-buttons">
+                <button id="theme-toggle" class="theme-toggle-btn"></button>
+                <button id="mobile-menu-button" class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1 data-aos="fade-down">Avishkar Zende</h1>
+                <p class="subtitle" data-aos="fade-down" data-aos-delay="200">
+                    I am a <span id="typed-text"></span>
+                </p>
+                <p class="description" data-aos="fade-down" data-aos-delay="400">
+                    I build beautiful, responsive, and user-friendly web applications.
+                </p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="Avishkar-Zende-Resume.pdf" download class="btn btn-secondary">Download CV</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section-container">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <div class="about-content" data-aos="fade-up" data-aos-delay="200">
+                <div class="about-image">
+                    <img src="images/profile-photo.webp" alt="Avishkar Zende">
+                </div>
+                <div class="about-text">
+                    <p>Hello! I'm Avishkar Zende, a passionate developer with a love for creating elegant solutions to complex problems. My journey into tech started with a fascination for how things work, and it has evolved into a career where I can build meaningful and impactful digital experiences.</p>
+                    <p>I specialize in full-stack development with a focus on Java, Spring Boot, React, and modern database technologies. I'm always eager to learn new things and improve my craft.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects" class="section-container">
+            <h2 class="section-title" data-aos="fade-up">My Projects</h2>
+            <div class="project-filters" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="html">HTML</button>
+                <button class="filter-btn" data-filter="css">CSS</button>
+                <button class="filter-btn" data-filter="javascript">JavaScript</button>
+                <button class="filter-btn" data-filter="java">Java</button>
+                <button class="filter-btn" data-filter="spring-boot">Spring Boot</button>
+            </div>
+            <div class="project-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card" data-category="java spring-boot html css">
+                    <!-- <img src="images/project-lawify.png" alt="Lawify Project" class="project-card-img"> -->
+                    <div class="project-card-body">
+                        <h3>Lawify</h3>
+                        <p>A web application for legal services, connecting clients with lawyers, created with a robust backend.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="https://github.com/Avishkar05/Lawify.git" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="java">
+                    <!-- <img src="images/project-bank.png" alt="Bank System Project" class="project-card-img"> -->
+                    <div class="project-card-body">
+                        <h3>Bank_System</h3>
+                        <p>A core banking system simulation demonstrating object-oriented principles and data management in Java.</p>
+                        <div class="project-tags">
+                            <span>Java</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="https://github.com/Avishkar05/Bank_System.git" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="javascript html css">
+                    <!-- <img src="images/project-student-mgmt.png" alt="Student Management System Project" class="project-card-img"> -->
+                    <div class="project-card-body">
+                        <h3>Student_Management_System</h3>
+                        <p>An interactive system for managing student records, built completely with front-end technologies.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">Live Demo</a>
+                            <a href="https://github.com/Avishkar05/Student_Management_System.git" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills" class="section-container">
+             <h2 class="section-title" data-aos="fade-up">My Skills</h2>
+             <div class="skills-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" /><span>Java</span></div>
+                <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" /><span>Spring Boot</span></div>
+                <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" /><span>React</span></div>
+                <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" /><span>JavaScript</span></div>
+                <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" /><span>HTML5</span></div>
+                <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" /><span>CSS3</span></div>
+                <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" /><span>MySQL</span></div>
+             </div>
+        </section>
+
+        <section id="contact" class="section-container">
+            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">I'm currently open to new opportunities. Feel free to reach out!</p>
+            <form action="#" class="contact-form" data-aos="fade-up" data-aos-delay="200">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-social-links">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+        </div>
+        <p>&copy; 2025 Avishkar Zende. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
