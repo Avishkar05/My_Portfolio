@@ -1,7 +1,5 @@
 # Avishkar Zende - Personal Portfolio Website
 
-![Portfolio Screenshot](https://placehold.co/800x400/0f172a/cbd5e1?text=Your+Portfolio+Screenshot+Here)
-
 This repository contains the complete source code for my personal portfolio website. It's a fully responsive, modern single-page application designed to showcase my skills, projects, and professional experience as a full-stack developer.
 
 ---
@@ -57,3 +55,24 @@ To run this project locally on your machine, follow these simple steps:
 ## 📂 File Structure
 
 The project is organized into three main files for simplicity:
+
+/
+|-- index.html          # The main HTML structure
+|-- style.css           # All styling, including dark mode and responsiveness
+|-- script.js           # All interactivity and library initializations
+|-- /images             # Folder for profile and project images
+|   |-- profile-photo.jpg
+|   |-- project-lawify.png
+|   `-- ...
+`-- README.md           # This file
+
+---
+
+## 📬 Contact
+
+**Avishkar Zende**
+
+- **Email:** [your.email@example.com](avishkarzende505@gmail.com)
+
+Feel free to reach out if you have any questions or would like to connect!
+
