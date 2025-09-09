@@ -56,7 +56,7 @@ To run this project locally on your machine, follow these simple steps:
 
 **Avishkar Zende**
 
-- **Email:** [your.email@example.com](avishkarzende505@gmail.com)
+- **Email:** [---> Email <---](avishkarzende505@gmail.com)
 
 Feel free to reach out if you have any questions or would like to connect!
 
