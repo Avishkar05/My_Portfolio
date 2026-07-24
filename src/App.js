@@ -9,6 +9,7 @@ import {
   Code2,
   Database,
   Download,
+  ExternalLink,
   FileText,
   Mail,
   Moon,
@@ -28,6 +29,29 @@ const profile = {
 
 const projects = [
   {
+    id: 'movie-review-app',
+    title: 'CineReviews',
+    category: 'Web Application',
+    tagline: 'Interactive movie discovery platform with user reviews, ratings, and real-time search.',
+    summary: 'Built a responsive web application that enables movie enthusiasts to explore trending films, search database records, read detailed summaries, and leave ratings and reviews.',
+    impact: [
+      'Engineered an intuitive movie search and filtering experience with dynamic data fetching.',
+      'Designed a clean, dark-mode accessible UI focused on high readability and smooth interactions.',
+      'Deployed a production build seamlessly to Netlify for rapid global access.',
+    ],
+    stack: ['React', 'JavaScript', 'Tailwind CSS', 'REST API'],
+    architecture: 'Frontend Single Page Application (SPA) consuming dynamic external movie APIs. Built with component-based state isolation for responsive filtering, search queries, and review submissions.',
+    endpoints: ['GET /api/movies/trending', 'GET /api/movies/search?q=:query', 'GET /api/movies/:id', 'POST /api/reviews'],
+    databaseLayout: ['movies (movie_id, title, overview, release_date, poster_path)', 'reviews (review_id, movie_id, user_name, rating, comment, created_at)'],
+    highlights: [
+      'Integration with external movie REST APIs for real-time media feeds',
+      'Live Demo: https://cine-reviews.netlify.app/',
+      'GitHub Repository: https://github.com/Avishkar05/movie-review-app',
+    ],
+    githubUrl: 'https://github.com/Avishkar05/movie-review-app',
+    liveUrl: 'https://cine-reviews.netlify.app/',
+  },
+  {
     id: 'lawify',
     title: 'Lawify',
     category: 'Web Platform',
@@ -43,6 +67,8 @@ const projects = [
     endpoints: ['POST /api/auth/login', 'GET /api/cases', 'POST /api/appointments', 'GET /api/documents/:id'],
     databaseLayout: ['users (client_id, advocate_id, role, auth metadata)', 'cases (case_id, client_id, status, priority)', 'appointments (appointment_id, advocate_id, scheduled_at)', 'documents (document_id, case_id, storage_ref, access_scope)'],
     highlights: ['RESTful API design with stable request/response schemas', 'JWT authentication and route-level authorization', 'MySQL normalized schema to reduce redundancy and enforce relational integrity'],
+    githubUrl: 'https://github.com/Avishkar05',
+    liveUrl: 'https://github.com/Avishkar05',
   },
   {
     id: 'banking-system-simulation',
@@ -60,6 +86,7 @@ const projects = [
     endpoints: ['POST /api/accounts', 'POST /api/transactions/transfer', 'GET /api/accounts/:id/statement', 'GET /api/transactions'],
     databaseLayout: ['accounts (account_id, customer_id, account_type, balance)', 'transactions (txn_id, source_account, target_account, amount, created_at)', 'ledger_entries (entry_id, txn_id, debit_credit, amount)'],
     highlights: ['Transactional integrity with service-layer validations', 'Data model tuned for statement generation and audit trails', 'Clean separation of concerns for maintainability and testing'],
+    githubUrl: 'https://github.com/Avishkar05',
   },
   {
     id: 'student-management-system',
@@ -77,6 +104,7 @@ const projects = [
     endpoints: ['POST /api/students', 'POST /api/enrollments', 'GET /api/students/:id/results', 'GET /api/courses'],
     databaseLayout: ['students (student_id, full_name, email, department)', 'courses (course_id, title, credit_hours)', 'enrollments (enrollment_id, student_id, course_id, semester)', 'grades (grade_id, enrollment_id, marks, gpa)'],
     highlights: ['Normalized many-to-many relationship handling for enrollments', 'REST API patterns with predictable status and payload handling', 'Frontend performance improvements through component-level state partitioning'],
+    githubUrl: 'https://github.com/Avishkar05',
   },
 ];
 
@@ -102,28 +130,71 @@ const scrollToSection = (sectionId) => {
 
 function ProjectCard({ project }) {
   return (
-    <motion.article variants={fadeUp} whileHover={{ y: -6 }} className="glass-card rounded-2xl border border-slate-200/60 p-6 shadow-lg shadow-cyan-500/10 dark:border-slate-700/70">
-      <div className="mb-4 flex items-start justify-between gap-3">
-        <div>
-          <p className="text-xs uppercase tracking-[0.18em] text-cyan-600 dark:text-cyan-300">{project.category}</p>
-          <h3 className="mt-1 text-xl font-semibold text-slate-900 dark:text-slate-100">{project.title}</h3>
+    <motion.article
+      variants={fadeUp}
+      whileHover={{ y: -6 }}
+      className="glass-card flex flex-col justify-between rounded-2xl border border-slate-200/60 p-6 shadow-lg shadow-cyan-500/10 dark:border-slate-700/70"
+    >
+      <div>
+        <div className="mb-4 flex items-start justify-between gap-3">
+          <div>
+            <p className="text-xs uppercase tracking-[0.18em] text-cyan-600 dark:text-cyan-300">
+              {project.category}
+            </p>
+            <h3 className="mt-1 text-xl font-semibold text-slate-900 dark:text-slate-100">
+              {project.title}
+            </h3>
+          </div>
+          <Briefcase className="h-5 w-5 text-cyan-500" />
         </div>
-        <Briefcase className="h-5 w-5 text-cyan-500" />
+
+        <p className="text-sm text-slate-600 dark:text-slate-300">{project.summary}</p>
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          {project.stack.map((tech) => (
+            <span
+              key={tech}
+              className="rounded-full border border-cyan-300/70 bg-cyan-100/70 px-3 py-1 text-xs font-medium text-cyan-900 dark:border-cyan-600/50 dark:bg-cyan-500/10 dark:text-cyan-100"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
       </div>
-      <p className="text-sm text-slate-600 dark:text-slate-300">{project.summary}</p>
-      <div className="mt-4 flex flex-wrap gap-2">
-        {project.stack.map((tech) => (
-          <span key={tech} className="rounded-full border border-cyan-300/70 bg-cyan-100/70 px-3 py-1 text-xs font-medium text-cyan-900 dark:border-cyan-600/50 dark:bg-cyan-500/10 dark:text-cyan-100">
-            {tech}
-          </span>
-        ))}
+
+      <div className="mt-6 flex flex-wrap items-center justify-between gap-2 border-t border-slate-200/60 pt-4 dark:border-slate-700/60">
+        <Link
+          to={`/projects/${project.id}`}
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-700 transition hover:text-cyan-500 dark:text-cyan-300 dark:hover:text-cyan-200"
+        >
+          Architecture <ArrowRight className="h-3.5 w-3.5" />
+        </Link>
+
+        <div className="flex items-center gap-2">
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1 rounded-lg border border-slate-300 bg-white/80 px-2.5 py-1 text-xs font-semibold text-slate-700 transition hover:border-cyan-400 hover:text-cyan-700 dark:border-slate-600 dark:bg-slate-800/70 dark:text-slate-200 dark:hover:border-cyan-500 dark:hover:text-cyan-300"
+            >
+              <Code2 className="h-3.5 w-3.5" />
+              Code
+            </a>
+          )}
+
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1 rounded-lg border border-cyan-500/40 bg-cyan-500/10 px-2.5 py-1 text-xs font-semibold text-cyan-700 transition hover:bg-cyan-500/20 dark:text-cyan-300"
+            >
+              Live Preview <ExternalLink className="h-3.5 w-3.5" />
+            </a>
+          )}
+        </div>
       </div>
-      <Link
-        to={`/projects/${project.id}`}
-        className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 transition hover:text-cyan-500 dark:text-cyan-300 dark:hover:text-cyan-200"
-      >
-        View architecture details <ArrowRight className="h-4 w-4" />
-      </Link>
     </motion.article>
   );
 }
