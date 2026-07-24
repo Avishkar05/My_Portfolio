@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# My Portfolio (React + Tailwind CDN + Framer Motion)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Modern multi-page portfolio for GitHub Pages with:
 
-## Available Scripts
+- HashRouter-based routing (no 404 refresh issues on GitHub Pages)
+- Dynamic dark/light mode with persistence
+- Glassmorphic cards and motion animations
+- Skill-based project filtering
+- EmailJS-powered contact form
 
-In the project directory, you can run:
+## Tech Stack
 
-### `npm start`
+- React (CRA)
+- Tailwind CSS via CDN utility classes
+- Framer Motion
+- Lucide React icons
+- React Router DOM (HashRouter)
+- EmailJS browser SDK
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Local Development
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install
+npm start
+```
 
-### `npm test`
+## EmailJS Setup (Step-by-Step)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Install EmailJS SDK:
+   ```bash
+   npm install @emailjs/browser
+   ```
+2. Go to [https://www.emailjs.com](https://www.emailjs.com) and create an account.
+3. Add an **Email Service** (Gmail/Outlook/etc.) and copy the **Service ID**.
+4. Create an **Email Template** and copy the **Template ID**.
+5. Open **Account > API Keys** and copy your **Public Key**.
+6. Create a `.env` file in the project root with:
+   ```env
+   REACT_APP_EMAILJS_SERVICE_ID=your_service_id
+   REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
+   REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key
+   ```
+7. Restart the dev server after adding `.env`:
+   ```bash
+   npm start
+   ```
 
-### `npm run build`
+The contact form now handles loading, success, and error states.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## GitHub Pages Deployment
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This project is configured for:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `homepage`: `https://avishkar05.github.io/My_Portfolio`
+- deploy command:
+  ```bash
+  npm run deploy
+  ```
 
-### `npm run eject`
+Because the app uses `HashRouter`, deep links such as `#/projects/lawify` work correctly on GitHub Pages.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Resume PDF
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Place your resume file at:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`public/resume.pdf`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Then the Resume page will automatically show the embedded viewer and download button.
